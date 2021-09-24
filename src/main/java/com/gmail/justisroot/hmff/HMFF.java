@@ -109,7 +109,7 @@ public class HMFF extends Section {
 			for (String line = reader.readLine(); line != null; line = reader.readLine()) {
 				String trimmed = line.trim();
 				if (trimmed.isEmpty()) continue;
-				else if (trimmed.charAt(0) == COMMENT_INDICATOR) comments.add(line);
+				else if (trimmed.charAt(0) == COMMENT_INDICATOR) comments.add(line.substring(1));
 				else {
 					parent = parentFor(line, parent).addChild(trimmed.substring(0, trimmed.indexOf(":")), NON_VALUE_MATCH_REGEX.matcher(line).replaceFirst(""));
 					parent.comments().set(comments);
