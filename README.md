@@ -94,7 +94,7 @@ hmff.getOrSetStringArray(new String[]{"array", "contents"}, "path", "to", "pi");
 The return values of each of these lines obviously being either the default value you passed, or the existing value at that location.
 If the path did not exist, it will be created with the default value you provided, thus allowing you to obtain all of the configuration values while also generating your defaults in the same stroke.
 
-For situations where obtaining the default value is intensive, the default can also be provided within a cCllable, which will only run if the value does not exist and the default is needed:
+For situations where obtaining the default value is intensive, the default can also be provided within a Callable, which will only run if the value does not exist and the default is needed:
 
 ```java
 hmff.getOrSetStringArray(() -> calculateArrayContents(), "path", "to", "pi");
