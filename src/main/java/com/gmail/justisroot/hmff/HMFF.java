@@ -113,6 +113,7 @@ public class HMFF extends Section {
 				else {
 					parent = parentFor(line, parent).addChild(trimmed.substring(0, trimmed.indexOf(":")), NON_VALUE_MATCH_REGEX.matcher(line).replaceFirst(""));
 					parent.comments().set(comments);
+					comments.clear();
 				}
 			}
 			return true;
