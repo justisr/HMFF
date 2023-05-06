@@ -241,7 +241,7 @@ public class Section implements Transmutable {
 		List<String> contents = new ArrayList<>();
 		for (String comment : this.comments) contents.add(COMMENT_INDICATOR + " " + comment);
 		contents.add(new String(new char[tab]).replace("\0", TAB) + this.key + VALUE_SEPARATOR + " " + this.value);
-		contents.add(""); // for readability
+		if (tab == 0) contents.add(""); // for readability
 		for (Section child : this.children.values()) contents.addAll(child.getLines(tab + 1));
 		return contents;
 	}
